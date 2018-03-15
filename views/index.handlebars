@@ -1,0 +1,34 @@
+<h1>Welcome to Barf Burger!</h1>
+
+<div class="row">
+  <h2>Needs to Nom</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block devoured=false}}
+        {{/unless}}
+      {{/each}}
+    </ul>
+    <br>
+  <h2>Nommed into Your Tummy</h2>
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devoured=true}}
+      {{/if}}
+      {{/each}}
+    </ul>
+</div>
+
+<div>
+  <h3>Make a burger by filling out the field with the name of your burger</h3>
+    <div class="row">
+        <form class="create-form">
+          <div class="form-group">
+            <br>
+            <input type="text" id="burger" name="name">
+          </div>
+          <button type="submit">Add a Burger</button>
+        </form>
+    </div>
+</div>
